@@ -1,0 +1,42 @@
+class Solution {
+    public void gameOfLife(int[][] board) {
+        int m = board.length;
+        int n = board[0].length;
+        int[][] nextBoard = new int[m][n];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int liveNeighbors = countLiveNeighbors(board, i, j);
+                if (board[i][j] == 1) {
+                    if (liveNeighbors < 2 || liveNeighbors > 3) {
+                        nextBoard[i][j] = 0;
+                    } else {
+                        nextBoard[i][j] = 1;
+                    }
+                } else {
+                    if (liveNeighbors == 3) {
+                        nextBoard[i][j] = 1;
+                    }
+                }
+            }
+        }
+        
+        // Copy next state to original board
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                board[i][j] = nextBoard[i][j];
+            }
+        }
+    }
+
+    public int countLiveNeighbors(int[][] board, int i, int j) {
+        int count = 0;
+        for (int x = Math.max(0, i - 1); x <= Math.min(board.length - 1, i + 1); x++) {
+            for (int y = Math.max(0, j - 1); y <= Math.min(board[0].length - 1, j + 1); y++) {
+                count += board[x][y] & 1; // Use bit masking to get current state
+            }
+        }
+        count -= board[i][j] & 1; // Exclude the cell itself
+        return count;
+    }
+}
