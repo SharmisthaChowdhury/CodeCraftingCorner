@@ -14,15 +14,13 @@ public class tUf {
             }
         }
 
-        // If break point does not exist:
+       
         if (ind == -1) {
             // reverse the whole array:
             Collections.reverse(A);
             return A;
         }
 
-        // Step 2: Find the next greater element
-        //         and swap it with arr[ind]:
 
         for (int i = n - 1; i > ind; i--) {
             if (A.get(i) > A.get(ind)) {
