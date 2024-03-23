@@ -3,13 +3,12 @@ import java.util.*;
 
 public class tUf {
     public static List< Integer > nextGreaterPermutation(List< Integer > A) {
-        int n = A.size(); // size of the array.
+        int n = A.size(); 
 
        
-        int ind = -1; // break point
+        int ind = -1; 
         for (int i = n - 2; i >= 0; i--) {
             if (A.get(i) < A.get(i + 1)) {
-                // index i is the break point
                 ind = i;
                 break;
             }
