@@ -1,0 +1,23 @@
+class A {
+
+    public static int lps(String s, int left, int right) {
+        if (left > right) {
+            return 0;
+        }
+        if (left == right) {
+            return 1;
+        }
+        if (s.charAt(left) == s.charAt(right)) {
+            return 2 + lps(s, left + 1, right - 1);
+        }
+
+        return Math.max(lps(s, left, right - 1), lps(s, left + 1, right));
+    }
+
+    public static void main(String[] args) {
+        String str = "geeks";
+        int length = lps(str, 0, str.length() - 1);
+        
+        System.out.println("Length of the Longest Palindromic Substring: " + length);
+    }
+}
