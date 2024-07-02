@@ -1,0 +1,27 @@
+
+
+class A {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5, 6};
+        int key = 4;
+        int left = 0;
+        int right = arr.length - 1;         
+        
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] == key) {
+                System.out.println(mid);
+                return; // Exit the loop once the key is found
+            }
+            if (arr[mid] < key) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+      
+            }
+        }
+        
+
+        System.out.println("Key not found");
+    }
+}
