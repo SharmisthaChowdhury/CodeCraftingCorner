@@ -1,0 +1,15 @@
+class A{
+public static void main(String args[]){
+String str="131";
+StringBuffer c=new StringBuffer(str);
+c.reverse();
+String b=new String(c);
+
+if(str.equals(b)){
+System.out.println("yes");
+}
+else{
+System.out.println("no");
+}
+}                                                    
+}
