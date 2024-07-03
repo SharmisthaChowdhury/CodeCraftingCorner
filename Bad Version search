@@ -1,0 +1,22 @@
+class A {
+    public static void main(String[] args) {
+        int bv = 2;
+        int low = 0;
+        int high = 6;
+        
+        
+        
+        while (low <= high) {
+            int mid =  (high + low) / 2;
+            if (mid == bv) {
+                System.out.println(mid);
+                return;
+            } else if (mid < bv) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println("Value not found");
+    }
+}
