@@ -1,0 +1,46 @@
+public class j1 {
+    class node {
+        int data;
+        node next;
+
+        node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    node head = null;
+    node tail = null;
+
+    public void add(int data) {
+        node newnode = new node(data);
+        if (head == null) {
+            head = newnode;
+            tail = newnode;
+            return;
+        }
+        tail.next=newnode;
+tail=newnode;    }
+
+    public void display() {
+        node current = head;
+        if (head == null) {
+            System.out.println("empty");
+            return;
+        }
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+
+   
+    public static void main(String args[]) {
+        j1 l = new j1();
+        l.add(1);
+        l.add(2);
+        l.add(3);
+        System.out.println("Before deletion:");
+        l.display();
+         }
+}
