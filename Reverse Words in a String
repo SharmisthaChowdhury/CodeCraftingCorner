@@ -1,0 +1,19 @@
+class A {
+    public static void main(String args[]) {
+        String str = "ami nye";
+        String[] words = str.split(" ");
+        int left = 0;
+        int right = words.length - 1;
+
+        while (left < right) {
+            String temp = words[left];
+            words[left] = words[right];
+            words[right] = temp;
+            left++;
+            right--;
+        }
+
+        str = String.join(" ", words);  
+        System.out.println(str);        
+    }
+}
