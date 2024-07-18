@@ -1,0 +1,28 @@
+import java.util.*;
+
+class A {
+
+        public static void main(String[] args) {
+        String str = "cat";
+        String str2 = "ace";
+if(str.length() != str2.length()){
+System.out.println("no");
+
+}
+
+        char[] charArray1 = str.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+
+
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+String sortedStr1 = new String(charArray1);
+ String sortedStr2 = new String(charArray2);
+
+if(sortedStr1 .equals(sortedStr2)){
+System.out.println("yes");
+}else{
+System.out.println("no");
+}
+    }
+}
