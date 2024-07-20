@@ -1,0 +1,76 @@
+class L {
+    class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    Node head = null;
+    Node tail = null;
+
+    public void add(int data) {
+        Node newnode = new Node(data);
+        if (head == null) {
+            head = newnode;
+            tail = newnode;
+        } else {
+            tail.next = newnode;
+            tail = newnode;
+        }
+    }
+
+    public void display() {
+        Node current = head;
+        if (head == null) {
+            System.out.println("empty");
+            return;
+        }
+        System.out.println("front");
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+
+    
+    public boolean nth(int key) {
+        Node current = head;
+        boolean found = false;
+
+        if (head == null) {
+            System.out.println("List is empty");
+            return false;
+        }
+
+        while (current != null) {
+            if (current.data == key) {
+                found = true;
+                break;
+            }
+            current = current.next;
+        }
+
+        return found;
+    }
+
+    public static void main(String args[]) {
+        L l = new L();
+        l.add(1);
+        l.add(2);
+        l.add(3);
+        l.add(4);
+        l.display();
+
+
+        boolean found = l.nth(2);
+        if (!found) {
+            System.out.println( " not found");
+        } else {
+            System.out.println( " found");
+        }
+    }
+}
