@@ -1,0 +1,67 @@
+class L{
+class node{
+int data;
+node prev;
+node next;
+node(int data){
+this.data=data;
+this.next=null;
+this.prev=null;
+}
+}
+
+node head=null;
+node tail=null;
+
+
+public void add(int data){
+node newnode=new node(data);
+if(head==null){
+head=newnode;
+tail=newnode;
+return;
+}
+tail.next=newnode;
+newnode.prev=tail;
+tail=newnode;
+}
+
+
+public void displayF(){
+node current=head;
+if(head==null){
+System.out.println("empty");
+return;
+}
+System.out.println("front");
+while(current!=null){
+System.out.println(current.data);
+current=current.next;
+}
+}
+
+public void displayB(){
+node current=tail;
+if(tail==null){
+System.out.println("empty");
+return;
+}
+System.out.println("back");
+while(current!=null){
+System.out.println(current.data);
+current=current.prev;
+}
+}
+
+
+
+public static void main(String args[]){
+L l=new L();
+l.add(1);
+l.add(2);
+l.add(3);
+l.add(4);
+l.displayF();
+l.displayB();
+}
+}
