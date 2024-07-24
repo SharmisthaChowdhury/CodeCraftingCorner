@@ -1,0 +1,14 @@
+import java.util.*;
+class A{
+public static void main(String args[]){
+Scanner s=new Scanner(System.in);
+System.out.println("num :");
+int num=s.nextInt();
+if(num%2 == 0){
+System.out.println("even");
+}
+else{
+System.out.println("odd");
+}
+}
+}
