@@ -1,0 +1,23 @@
+class A {
+    public static void main(String args[]) {
+        int n = 145;
+int fact =1;
+int fact2 =1;
+for(int i=1;i<=4;i++){
+ fact =fact*i;
+}
+int tot=fact+1;
+System.out.println("total of the 1,2 num :"+tot);
+        
+for(int j=1;j<=5;j++){
+ fact2 =fact2*j;
+}
+System.out.println("fact of the 3rd num :"+fact2);
+   if(tot+fact2==n){
+System.out.println("Strong num");
+}     
+else{
+System.out.println("not");
+}
+}
+}
