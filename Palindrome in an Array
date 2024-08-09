@@ -1,0 +1,25 @@
+class A {
+    public static void main(String[] args) {
+        
+        int arr[] = {3, 2, 4, 1, 10, 30, 40, 20};
+        int left = 0;
+        int right = arr.length - 1;
+        
+        boolean isPalindrome = true;
+        
+        while (left < right) {
+            if (arr[left] != arr[right]) {
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+        
+        if (isPalindrome) {
+            System.out.println("The array is a palindrome.");
+        } else {
+            System.out.println("The array is not a palindrome.");
+        }
+    }
+}
