@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+class A {
+    static void findNonRepeatingElements(int arr[]) {
+        Arrays.sort(arr);
+
+        System.out.print("The non-repeating elements are: ");
+        for (int i = 0; i < arr.length; i++) {
+            // Check if the current element is not equal to the next and previous element
+            if ((i == 0 || arr[i] != arr[i - 1]) && (i == arr.length - 1 || arr[i] != arr[i + 1])) {
+                System.out.print(arr[i] + " ");
+            }
+          
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 1, 1, 2, 2, 3, 4, 4, 5, 2};
+        findNonRepeatingElements(arr);
+    }
+}
