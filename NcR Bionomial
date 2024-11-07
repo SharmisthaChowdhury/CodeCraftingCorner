@@ -1,0 +1,27 @@
+import java.util.*;
+
+class A {
+
+static int fact(int n){
+int fact=1;
+for(int i=1;i<=n;i++){
+fact *=i;
+}
+return fact;
+
+}
+static int ncr(int n,int r){
+int fct_n=fact(n);
+int fct_r=fact(r);
+int fct_nr=fact(n-r);
+ return fct_n/(fct_r*fct_nr);
+}
+
+
+public static void main(String args[]) {
+
+int n=8,r=2;
+int ans=ncr(n,r);
+System.out.println(ans);
+    }
+}
