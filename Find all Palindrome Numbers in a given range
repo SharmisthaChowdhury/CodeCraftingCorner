@@ -1,0 +1,28 @@
+import java.util.*;
+ 
+class A {
+    static boolean isPalindrome(int n) {
+        int reverse = 0;
+        int temp = n; // Store original number
+        while (temp > 0) {
+            int ld = temp % 10; // Extract last digit
+            reverse = reverse * 10 + ld; // Build the reversed number
+            temp = temp / 10; // Remove last digit from temp
+        }
+        
+        // Compare original number with reversed number
+        return n == reverse;
+    }
+    
+    public static void main(String args[]) {
+        int min = 100;
+        int max = 150;
+        
+        System.out.println("Palindrome numbers between " + min + " and " + max + ":");
+        for (int i = min; i <= max; i++) {
+            if (isPalindrome(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
