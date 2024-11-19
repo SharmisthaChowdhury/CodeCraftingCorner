@@ -1,17 +1,20 @@
 import java.util.*;
  
 class A {
-    static boolean isPalindrome(int n) {
-        int reverse = 0;
-        int temp = n; // Store original number
-        while (temp > 0) {
-            int ld = temp % 10; // Extract last digit
-            reverse = reverse * 10 + ld; // Build the reversed number
-            temp = temp / 10; // Remove last digit from temp
-        }
+   static boolean palindrome(int n) {
         
-        // Compare original number with reversed number
-        return n == reverse;
+        int revNum = 0;
+               int dup = n;
+                while (n > 0) {
+                        int ld = n % 10;
+                        revNum = (revNum * 10) + ld;
+                        n = n / 10;
+        }
+                if (dup == revNum) {
+                        return true;
+        } else {
+                       return false;
+        }
     }
     
     public static void main(String args[]) {
@@ -20,7 +23,7 @@ class A {
         
         System.out.println("Palindrome numbers between " + min + " and " + max + ":");
         for (int i = min; i <= max; i++) {
-            if (isPalindrome(i)) {
+            if (palindrome(i)) {
                 System.out.print(i + " ");
             }
         }
